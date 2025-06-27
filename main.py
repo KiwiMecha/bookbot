@@ -6,7 +6,11 @@ from stats import (num_words, char_count, sorted_num)
 
 def main():
     output = get_book_text("books/frankenstein.txt")
-    print(f"{num_words(output)} words found in the document")
-    print(char_count(output))
+    print(f"Found {num_words(output)} total words")
+    sorted_chars = (sorted_num(char_count(output)))
+    for item in sorted_chars:
+        if not item["char"].isalpha():
+            continue
+        print(f"{item['char']}: {item['num']}")
 
 main()
