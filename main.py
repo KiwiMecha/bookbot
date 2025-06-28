@@ -11,7 +11,7 @@ def get_book_text(book):
 from stats import (num_words, char_count, sorted_num)
 
 def main():
-    output = get_book_text("books/frankenstein.txt")
+    output = get_book_text(sys.argv[1])
     print(f"Found {num_words(output)} total words")
     sorted_chars = (sorted_num(char_count(output)))
     for item in sorted_chars:
